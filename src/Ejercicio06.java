@@ -16,6 +16,23 @@ public class Ejercicio06 {
 //    contiene el carácter (@), algún carácter después de él antes del
 //    carácter (.) y algún carácter después de éste
     public static void enviarMensaje(String cadena){
+        int arroba = cadena.indexOf('@');
+        int punto = cadena.indexOf('.');
         
+        try{
+            System.out.println(cadena);
+            if (arroba >= 1 && (punto - arroba) >= 2 && punto < cadena.length()) {
+            }
+            } catch (DirCorreoIncorrectaExcepcion e) {
+                    
+            } finally {
+                            
+            }
+        }
+        
+    }
+    
+    public static void main(String[] args) {
+        String cadena = "correo@dominio.com";
     }
 }
