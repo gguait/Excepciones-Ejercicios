@@ -20,19 +20,18 @@ public class Ejercicio06 {
         int punto = cadena.indexOf('.');
         
         try{
-            System.out.println(cadena);
-            if (arroba >= 1 && (punto - arroba) >= 2 && punto < cadena.length()) {
+            if (arroba < 1 || (punto - arroba) <= 1 || punto > cadena.length()) {
+                throw new Exception("DirCorreoIncorrectaExcepcion");
             }
-            } catch (DirCorreoIncorrectaExcepcion e) {
-                    
-            } finally {
-                            
+            } catch (Exception e) {
+                    System.out.println("Direccion incorrecta");
             }
         }
         
-    }
+    
     
     public static void main(String[] args) {
         String cadena = "correo@dominio.com";
+        enviarMensaje(cadena);
     }
 }
