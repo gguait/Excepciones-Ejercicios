@@ -8,17 +8,15 @@
  * @author pabmar
  */
 public class Entrenamiento {
+
     public static void main(String[] args) throws Corredor.AgotadoException {
         Corredor pepe = new Corredor(50);
-        boolean continuar = true;
-        int vecesAgotado=0;
-        pepe.Correr();
-        
+
 //        for (int i = 0; i < 3; i++) {
-//            for (int j = 0; j <= (pepe.getEnergia() / 10) +1; j++) {
-//                try{
+//            for (int j = 0; j <= (pepe.getEnergia() / 10) + 1; j++) {
+//                try {
 //                    pepe.Correr();
-//                } catch(Corredor.AgotadoException e){
+//                } catch (Corredor.AgotadoException e) {
 //                    System.out.println("Agotado");
 //                }
 //            }
@@ -38,24 +36,24 @@ public class Entrenamiento {
 //                    break;
 //            }
 //        }
-        
+
+//        Con do while
+          boolean continuar = true;
+          int vecesAgotado=0;
         do{
             try{
                 pepe.Correr();
-            }catch(Corredor.AgotadoException e){
+            }
+            catch(Corredor.AgotadoException e){
                 vecesAgotado++;
                 switch(vecesAgotado){
-                    case 1:
+                    case 1: pepe.recargarEnergia(30);
                         System.out.println("\nRecarga de 30");
-                        pepe.recargarEnergia(30);
                         break;
-                    
-                    case 2:
+                    case 2: pepe.recargarEnergia(10);
                         System.out.println("\nRecarga de 10");
-                        pepe.recargarEnergia(10);
                         break;
-                    case 3:
-                        continuar=false;
+                    case 3: continuar=false;
                         System.out.println("Terminado");
                 }
             }
